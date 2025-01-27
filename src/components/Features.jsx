@@ -13,8 +13,8 @@ const Features = () => {
       </p>
     </div>
     <div className="grid md:grid-cols-3 gap-8">
-      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-        <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+      <div className="bg-white p-6 rounded-md border ">
+        <div className="w-12 h-12 bg-emerald-100 rounded-md flex items-center justify-center mb-4">
         <SmartLists/>
         </div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -25,8 +25,8 @@ const Features = () => {
           categorization and priority settings.
         </p>
       </div>
-      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-        <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+      <div className="bg-white p-6 rounded-md border">
+        <div className="w-12 h-12 bg-emerald-100 rounded-md flex items-center justify-center mb-4">
             <PriceHitory/>
         </div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -37,8 +37,8 @@ const Features = () => {
           favorite items go on sale.
         </p>
       </div>
-      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-        <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+      <div className="bg-white p-6 rounded-xl border rounded-md">
+        <div className="w-12 h-12 bg-emerald-100 rounded-md flex items-center justify-center mb-4">
             <MobileReady/>
         </div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">

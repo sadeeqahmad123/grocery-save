@@ -15,10 +15,10 @@ const Hero = () => {
         saving time and money every day.
       </p>
       <div className="flex justify-center space-x-4">
-        <button className="px-8 py-3 bg-emerald-600 text-white font-medium rounded-lg shadow-lg hover:bg-emerald-700 transition-colors">
+        <button className="px-8 py-3 bg-emerald-600 text-white font-medium rounded-md shadow-sm hover:bg-emerald-700 transition-colors">
           Get Started Free
         </button>
-        <button className="px-8 py-3 bg-white text-emerald-600 font-medium rounded-lg shadow-lg hover:bg-gray-50 transition-colors">
+        <button className="px-8 py-3 bg-white text-emerald-600 font-medium rounded-md shadow-sm hover:bg-gray-50 transition-colors">
           Watch Demo
         </button>
       </div>

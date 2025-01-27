@@ -1,7 +1,13 @@
-import React from "react";
-import { Arrow, CreateLists, OrganizeStore, SetReminders, ShareWithFamily, Step2, Step3, Step4 } from "./icons";
+import React, { useState } from "react";
+import { Arrow, CreateLists, Step2, Step3, Step4 } from "./icons";
+import CreateList from "./CreateList";
+import AddItems from "./AddItems";
+import TrackPrices from "./TrackPrices";
+import SaveMoney from "./SaveMoney";
 
 const HowItWork = () => {
+  const [activeComponent, setActiveComponent] = useState("CreateList");
+
   return (
     <div className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +22,10 @@ const HowItWork = () => {
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-1/3">
             <div className="space-y-4">
-              <button className="w-full text-left p-4 rounded-lg transition-all duration-300 bg-white shadow-lg border-l-4 border-emerald-500">
+              <button
+                onClick={() => setActiveComponent("CreateList")}
+                className={`w-full text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md`}
+              >
                 <div className="flex items-center">
                   <div
                     className="
@@ -24,14 +33,14 @@ const HowItWork = () => {
                   bg-emerald-100 text-emerald-600
                 "
                   >
-                    <CreateLists/> 
+                    <CreateLists />
                   </div>
                   <div className="ml-4">
                     <div className="flex items-center">
                       <span className="text-sm font-medium text-emerald-600">
                         Step 1
                       </span>
-                    <Arrow/>
+                      <Arrow />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900">
                       Create Lists
@@ -39,7 +48,11 @@ const HowItWork = () => {
                   </div>
                 </div>
               </button>
-              <button className="w-full text-left p-4 rounded-lg transition-all duration-300 bg-white/50 hover:bg-white hover:shadow-md">
+              <button
+                onClick={() => setActiveComponent("AddItems")}
+                className={`w-full text-left p-4 hover:shadow-md rounded-lg transition-all duration-300 
+                 `}
+              >
                 <div className="flex items-center">
                   <div
                     className="
@@ -47,7 +60,7 @@ const HowItWork = () => {
                   bg-gray-100 text-gray-500
                 "
                   >
-                    <Step2/>
+                    <Step2 />
                   </div>
                   <div className="ml-4">
                     <div className="flex items-center">
@@ -61,7 +74,10 @@ const HowItWork = () => {
                   </div>
                 </div>
               </button>
-              <button className="w-full text-left p-4 rounded-lg transition-all duration-300 bg-white/50 hover:bg-white hover:shadow-md">
+              <button
+                onClick={() => setActiveComponent("TrackPrices")}
+                className={`w-full text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md`}
+              >
                 <div className="flex items-center">
                   <div
                     className="
@@ -69,7 +85,7 @@ const HowItWork = () => {
                   bg-gray-100 text-gray-500
                 "
                   >
-                    <Step3/>
+                    <Step3 />
                   </div>
                   <div className="ml-4">
                     <div className="flex items-center">
@@ -83,7 +99,10 @@ const HowItWork = () => {
                   </div>
                 </div>
               </button>
-              <button className="w-full text-left p-4 rounded-lg transition-all duration-300 bg-white/50 hover:bg-white hover:shadow-md">
+              <button
+                onClick={() => setActiveComponent("SaveMoney")}
+                className={`w-full text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md`}
+              >
                 <div className="flex items-center">
                   <div
                     className="
@@ -91,7 +110,7 @@ const HowItWork = () => {
                   bg-gray-100 text-gray-500
                 "
                   >
-                    <Step4/>
+                    <Step4 />
                   </div>
                   <div className="ml-4">
                     <div className="flex items-center">
@@ -108,51 +127,10 @@ const HowItWork = () => {
             </div>
           </div>
           <div className="lg:w-2/3">
-            <div className="bg-white rounded-2xl shadow-lg px-8 py-12 border">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Create Lists
-              </h3>
-              <p className="text-gray-600 mb-8">
-                Create custom shopping lists for different stores or occasions
-              </p>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-gray-50 p-4 rounded-lg text-center hover:bg-emerald-50 transition-colors duration-300">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
-                    <OrganizeStore/>
-                  </div>
-                  <p className="text-sm font-medium text-gray-700">
-                    Organize by store
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg text-center hover:bg-emerald-50 transition-colors duration-300">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
-                    <ShareWithFamily/>
-                  </div>
-                  <p className="text-sm font-medium text-gray-700">
-                    Share with family
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg text-center hover:bg-emerald-50 transition-colors duration-300">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
-                    <SetReminders/>
-                  </div>
-                  <p className="text-sm font-medium text-gray-700">
-                    Set reminders
-                  </p>
-                </div>
-              </div>
-              <div className="mt-8 flex justify-between items-center">
-                <button
-                  className="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 cursor-not-allowed"
-                  disabled=""
-                >
-                  Previous Step
-                </button>
-                <button className="px-4 py-2 rounded-lg text-sm font-medium bg-emerald-600 text-white hover:bg-emerald-700">
-                  Next Step
-                </button>
-              </div>
-            </div>
+            {activeComponent === "CreateList" && <CreateList />}
+            {activeComponent === "AddItems" && <AddItems />}
+            {activeComponent === "TrackPrices" && <TrackPrices />}
+            {activeComponent === "SaveMoney" && <SaveMoney />}
           </div>
         </div>
       </div>
